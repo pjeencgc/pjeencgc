@@ -1,6 +1,4 @@
-
- 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8"/>
@@ -9,56 +7,242 @@
   <title>pjeencgc</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-  
-  body {
-    
-    background-image: url("https://www.infomediaire.net/wp-content/uploads/2017/05/Business.jpg");
-    background-size:800px 600px;
-    background-repeat: no-repeat;
-  }
-  .navbar{
-        
-    
-  
-    height: 50px;
-    margin-top: 120px
-  
-    
-    
-   
-  
-
-  }
-  a{
-    color: black;
+<style type="text/css">
+  .sidenav {
+    height: 50%;                  
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 60px;
+    left: 0;
+    background-color: #FDFDFE;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+ 
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    padding:10px;
-    padding-bottom:10px;
-    size: 4px
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+ 
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+ 
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 100px;
+}
+ 
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow:hidden;
+    width:100%;
+}
+body {
+  overflow-x: hidden;
+}
+ 
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #FDFDFE;
+    overflow: hidden;
+}
+ 
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
   }
-  
-
-  
-
-  
+ 
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+ 
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+ 
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 18px;}
+    .sidenav a {font-size: 18px;}
+}
+ 
+a svg{
+  transition:all .5s ease;
+ 
+  &:hover{
+    #transform:rotate(180deg);
+  }
+}
+ 
+#ico{
+  display: none;
+}
+ 
+.menu{
+  background: #000;
+  display: none;
+  padding: 5px;
+  width: 320px;
+}
+  @include border-radius(5px);
+ 
+  #transition: all 0.5s ease;
+ 
+  a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 10px 2px;
+    margin: 3px 0;
+    text-decoration: none;
+    background: #444;
+ 
+    &:nth-child(1){
+      margin-top: 0;
+      @include border-radius(3px 3px 0 0 );
+    }
+    &:nth-child(5){
+      margin-bottom: 0;
+      @include border-radius(0 0 3px 3px);
+    }
+ 
+    &:hover{
+      background: #555;
+    }
+  }
+}
 </style>
 <body>
-  <div class="wrap">
-    <ul class="navbar">
-      <a href="index.html">Acceuil</a> 
+<div id="sideNavigation" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Acceuil</a> 
       <a href="compétences.html">Nos domaines de compétences</a>
       <a href="actualités.html">Actualités</a>
-  
-    
-    
-  <div style="position:absolute;top:250px; width:380px">
-      <center><b>Pro-Way Junior Experts</b></center>
-    </div>
-    <div style="position:absolute;top:55px; width:600px;">
-      <center><b><font size="6" face="times new roman" color="#5a98f7">Pro-Way Junior Experts</font></b></center>
+      <a href="équipe.html">Notre équipe</a>
+      <a href="contact.html">Nous contacter</a>
+</div>
+ 
+<nav class="topnav">
+  <a href="#" onclick="openNav()">
+    <svg width="30"  height="30" id="icoOpen">
+        <path d="M0,5 30,5" stroke="#000" stroke-width="5"></path>
+        <path d="M0,14 30,14" stroke="#000" stroke-width="5"></path>
+        <path d="M0,23 30,23" stroke="#000" stroke-width="5"></path>
+    </svg>
+  </a>
+</nav>
+ 
 
-    </div>
+ 
+<div id="main">
+
+</div>
+<script>
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+ 
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+<div style="position:absolute;top:55px; width:600px;">
+      <center><b><font size="6" face="times new roman" color="#3476BE">Pro-Way Junior Experts</font></b></center>
+     <div style="position:absolute;top:-60px; width:50px">
+        <img src="img/pje.png" width="150"></div>
+        <p><div style="position: absolute;top:100px;width: 800px"><center><b><img src="https://1.bp.blogspot.com/-HSt9lsqlWVE/WKxXRVOBV4I/AAAAAAAAAFs/Aa345Ag4XJk_wzV6VNP-BoXREQ7TKKWqgCLcB/s1600/company.png" width="800" height="500"> </b></center></div></p><br>
+        
+      <div style="position:absolute;top:250px; width:800px">
+      <center><b>La<font size="5" color="#FFFFFF"> junior entreprise </font> de l'ENCG Casablanca</b></center></div>
+      <div style="position: absolute;top:620px;width: 0px"><center><b><img src="https://raw.githubusercontent.com/pjeencgc/pjeencgc/master/Tu%20restes%20avec%20moi%20_(2).png" width="785" height="500" width="800"> </b></center></div><br>
+
+<p><div style="position: absolute;top:1200px;width: 800px"><center><b><font size="7" color="#10285B">Nos domaines de compétences </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:1280px;width: 800px"><center><b><hr width="40%" color="#10285B"> </b></center></div></p><br>
+      <div style="position: absolute;top:1370px;width: 0px"><center><b><img src="https://raw.githubusercontent.com/pjeencgc/pjeencgc/master/Nos-domaines-de-comptences6-ConvertImage.png" width="785" height="500" width="800"> </b></center></div><br>
+       <p><div style="position: absolute;top:2000px;width: 800px"><center><b><font size="7" color="#10285B">Notre équipe </font></b></center></div></p><br>
+<p><div style="position: absolute;top:2080px;width: 800px"><center><b><hr width="20%" color="#10285B"> </b></center></div></p><br>
+
+<p><div style="position: absolute;top:2200px;width: 300px"><center><b><img src="img/pje4.png" width="225" height="180"> </b></center></div></p><br>
+<p><div style="position: absolute;top:2200px;width: 800px"><center><b><img src="img/pje5.png" width="225" height="180"> </b></center></div></p><br>
+<p><div style="position: absolute;top:2200px;width: 1300px"><center><b><img src="img/pje3.png" width="225" height="180"> </b></center></div></p><br>
+<p><div style="position: absolute;top:2480px;width: 800px"><center><b><img src="img/pje2.png" width="225" height="180"> </b></center></div></p><br>
+<p><div style="position: absolute;top:2480px;width: 300px"><center><b><img src="img/pje7.png" width="225" height="180"> </b></center></div></p><br>
+<p><div style="position: absolute;top:2480px;width: 1300px"><center><b><img src="img/pje6.png" width="225" height="180"> </b></center></div></p><br>
+<p><div style="position: absolute;top:2380px;width: 300px"><center><b><font size="5" color="350404">Hamia Ikrame </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2420px;width: 300px"><center><b><font size="4" color="#000000">Présidente </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2380px;width: 800px"><center><b><font size="5" color="#350404">Bouidra Salma</font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2420px;width:800px"><center><b><font size="4" color="#000000">Secrétaire Générale </font></b></center></div>
+</p><br>
+
+<p><div style="position: absolute;top:2380px;width: 1300px"><center><b><font size="5" color="#350404">Rochdi Zineb</font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2420px;width: 1300px"><center><b><font size="4" color="#000000">Trésorière </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2660px;width: 800px"><center><b><font size="5" color="#350404">Hakimi Mohamed </font></b></center></div>
+</p><br>
+</p><div style="position: absolute;top:2700px;width: 800px"><center><b><font size="4" color="#000000">Responsable de prospection </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2660px;width: 300px"><center><b><font size="5" color="#350404">Echihabi Ghita</font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2700px;width: 280px"><center><b><font size="4" color="#000000">Responsable de communication </font></b></center></div>
+</p><br>
+
+</p><br>
+<p><div style="position: absolute;top:2660px;width: 1300px"><center><b><font size="5" color="#350404">Hamia Oumayma </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2700px;width: 1300px"><center><b><font size="4" color="#000000">Responsable d'évènementiel </font></b></center></div>
+</p><br>
+<p><div style="position: absolute;top:2845px;width: 800px"><center><b><hr width="100%"> </b></center></div></p><br>
+
+
+
+<p><div style="position: absolute;top:2855px;width: 800px"><center><b><img src="http://sophiabusinessangels.com/wp-content/uploads/2017/03/slide1-business.jpg" width="900" height="500"> </b></center></div></p><br>
+<p><div style="position: absolute;top:3050px;width: 1200px"><center><b><font size="4" color="#000000">E-mail : pje.encgc@gmail.com
+ </font></b></center></div></p><br>
+ <p><div style="position: absolute;top:3100px;width: 1200px"><center><b><font size="4" color="#000000">Téléphone : 06 54 66 04 04
+ </font></b></center></div></p><br>
+<p><div style="position: absolute;top:3150px;width: 1200px"><center><b><font size="4" color="#000000">Adresse :
+    ENCG Casablanca, Beau site , B.P
+ </font></b></center></div></p><br>
+ <p><div style="position: absolute;top:3200px;width: 1200px"><center><b><font size="4" color="#000000">Ain sebaa , Casablanca.
+ </font></b></center></div></p><br>
+  
+</div>
+</form>
+
+</html>
+</body>
     <div style="position:absolute;top:300px; width:335px">
       <center><b>La<font color="#FFFFFF"> junior entreprise </font> de l'ENCG Casablanca</b></center></div>
     <div style="position:absolute;top:0px;left:35px; width:50px">
